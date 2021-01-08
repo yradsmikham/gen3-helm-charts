@@ -1,0 +1,4 @@
+apiVersion: v2
+name: indexd
+description: A Helm chart for Gen3 Indexd
+version: 0.1.0
