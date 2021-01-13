@@ -38,7 +38,7 @@ kubectl create secret generic "service-ca" --from-file=ca.pem
 
 ### Deploying Postgres (dependency)
 
-Recommended to use the stable binami postgresql image [here](https://github.com/bitnami/charts/tree/master/bitnami/postgresql/#installing-the-chart)
+Recommended to use the stable binami postgresql image [here](https://github.com/bitnami/charts/tree/master/bitnami/postgresql/#installing-the-chart).
 
 To deploy postgresl this way, run:
 
@@ -46,18 +46,8 @@ To deploy postgresl this way, run:
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm install postgres -f values.yaml bitnami/postgresql
 ```
-where the `values.yml` is the one found in `\postgres\values.yaml` of this repo.
+where the `values.yml` can be found in `\postgres\values.yaml` of this repo.
 
-Alternatively, you can install a more custom version of postgres by running the following:
-
-Be sure to `cd` into `postgres/templates` directory and run:
-
-```
-kubectl create -f postgres-configmap.yaml
-kubectl create -f postgres-storage.yaml
-kubectl create -f postgres-deployment.yaml
-kubectl create -f postgres-service.yaml
-```
 
 ### Deploy Microservice
 
@@ -67,20 +57,15 @@ helm install indexd .
 kubectl get pods
 ```
 
-## Delete Postgres Deployments
+When deployed successfully, you should see the following (or similar) logs for `indexd`:
+
+![Indexd Logs](./docs/images/indexd_logs.png)
+
+## Uninstall Services
 
 ```
+helm uninstall indexd
 helm uninstall postgres
-```
-
-OR if using manual deployments:
-
-```
-kubectl delete service postgres
-kubectl delete deployment postgres
-kubectl delete configmap postgres-config
-kubectl delete persistentvolumeclaim postgres-pv-claim
-kubectl delete persistentvolume postgres-pv-volume
 ```
 
 ## Notes
