@@ -1,0 +1,6 @@
+{
+    "db_host": "postgres",
+    "db_username": "arborist_user",
+    "db_password": "arborist_pass",
+    "db_database": "arborist_db"
+  }

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: indexd-deployment
+  name: {{ .Chart.Name }}-deployment
   annotations:
     gen3.io/network-ingress: "fence,presigned-url-fence,fenceshib,peregrine,sheepdog,ssjdispatcherjob,metadata"
 spec:

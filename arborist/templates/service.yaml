@@ -2,19 +2,9 @@ kind: Service
 apiVersion: v1
 metadata:
   name: {{ .Chart.Name }}-service
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v1
-      ambassador_id: "gen3"
-      kind:  Mapping
-      name:  indexd_mapping
-      prefix: /index/
-      service: http://indexd-service:80
 spec:
   selector:
     app: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
   ports:
     - protocol: TCP
       port: {{ .Values.service.httpPort }}
@@ -26,4 +16,4 @@ spec:
       targetPort: {{ .Values.service.httpsPort }}
       name: https
       nodePort: null
-  type: {{ .Values.service.type }}
+  type: ClusterIP

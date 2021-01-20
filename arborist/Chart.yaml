@@ -1,0 +1,4 @@
+apiVersion: v2
+name: arborist
+description: A Helm chart for Gen3 Arborist
+version: 0.1.0
