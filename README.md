@@ -13,7 +13,7 @@ Before deploying to a Kubernetes cluster, you must enable the cluster to consume
 
 For `indexd-secret`:
 ```
-kubectl create secret generic indexd-secret --from-file=local_settings.py=./indexd_settings.py --from-file=./config_helper.py
+kubectl create secret generic indexd-secret --from-file=local_settings.py=./indexd_settings.py
 ```
 
 For `indexd-creds`:

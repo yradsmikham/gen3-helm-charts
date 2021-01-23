@@ -1,0 +1,4 @@
+apiVersion: v2
+name: fence
+description: A Helm chart for Gen3 Fence
+version: 0.1.0
