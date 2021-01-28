@@ -1,0 +1,28 @@
+{
+    "notes": [
+      "This is the dev environment manifest",
+      "That's all I have to say"
+    ],
+    "versions": {
+      "arborist": "quay.io/cdis/arborist:master",
+      "fence": "quay.io/cdis/fence:master",
+      "indexd": "quay.io/cdis/indexd:master",
+      "peregrine": "quay.io/cdis/peregrine:master",
+      "sheepdog": "quay.io/cdis/sheepdog:master",
+      "portal": "quay.io/cdis/portal:master"
+    },
+    "global": {
+      "environment": "prod",
+      "hostname": "localhost",
+      "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/canine_dictionary/1.0/schema.json",
+      "portal_app": "gitops",
+      "GEN3_DEBUG": "False",
+      "indexd_url": "https://localhost/index",
+      "arborist_url": "http://arborist-service.default.svc.cluster.local",
+      "fence_url": "https://localhost/user",
+      "auth_namespace": "default"
+    },
+    "canary": {
+      "default": 0
+    }
+  }

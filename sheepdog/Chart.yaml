@@ -1,0 +1,4 @@
+apiVersion: v2
+name: sheepdog
+description: A Helm chart for Gen3 sheepdog
+version: 0.1.0
